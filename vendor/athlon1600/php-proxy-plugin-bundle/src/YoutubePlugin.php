@@ -54,7 +54,7 @@ class YoutubePlugin extends AbstractPlugin {
 		
 		$youtube = new \YouTubeDownloader();
 		// cannot pass HTML directly because all the links in it are already "proxified"...
-		$links = $youtube->getDownloadLinks($url, "mp4 480, mp4");
+		$links = $youtube->getDownloadLinks($url, "mp4 720, mp4");
 		
 		if($links){
 		
