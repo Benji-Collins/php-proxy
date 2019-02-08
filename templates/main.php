@@ -151,7 +151,20 @@ a:active {
 	</div>
 
 	<div class="notice">
-		🌽🌽🌽
+	<?php
+		$bday = date('Y-02-21');
+		$today = date('Y-m-d');
+		$diff = (strtotime($bday) - strtotime($today)) / 86400;
+		if ($diff == 0) {
+			echo "🎂 It's SneakySneaky's 1st birthday! 🎂";
+		}
+		elseif ($diff > 0) {
+			echo "🎂 Only " . $diff . " days until SneakySneaky's 1st birthday 🎂!";
+		}
+		else {
+			echo "🌽🌽🌽";
+		}
+	?>
 	</div>
 
 	<?php if(isset($error_msg)){ ?>
