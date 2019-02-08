@@ -28,6 +28,7 @@ class YoutubePlugin extends AbstractPlugin {
 		$output = Html::remove("#alerts", $output);
 		$output = Html::remove("#yt-masthead-signin", $output);
 		$output = Html::remove("#watch-discussion", $output);
+		$output = Html::remove("#hats-container", $output);
 
 		
 		// do this on all youtube pages
@@ -53,13 +54,13 @@ class YoutubePlugin extends AbstractPlugin {
 		
 		$youtube = new \YouTubeDownloader();
 		// cannot pass HTML directly because all the links in it are already "proxified"...
-		$links = $youtube->getDownloadLinks($url, "mp4 720, mp4 360, mp4");
+		$links = $youtube->getDownloadLinks($url, "mp4 480, mp4");
 		
 		if($links){
 		
 			$url = current($links)['url'];
 			
-			$player = vid_player($url, 854, 480, 'mp4');
+			$player = vid_player($url, 856, 480, 'mp4');
 			
 			// this div blocks our player controls
 			$output = Html::remove("#theater-background", $output);
