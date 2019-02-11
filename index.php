@@ -42,7 +42,12 @@ session_write_close();
 if(isset($_POST['url'])){
 	
 	$url = $_POST['url'];
-	if (strpos ($url, '.') !== false){
+	if(strpos($url, "youtube.com/watch?") !== false)
+	{
+		$proxurl = "https://test.sneakysneaky.tk/mini/index.php?" . $url;
+		header("Location: $proxurl");
+	}
+	else if (strpos ($url, '.') !== false){
 		$url = add_http($url);
 		header("HTTP/1.1 302 Found");
 		header('Location: '.proxify_url($url));
