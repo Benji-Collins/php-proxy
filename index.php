@@ -44,7 +44,7 @@ if(isset($_POST['url'])){
 	$url = $_POST['url'];
 	if(strpos($url, "youtube.com/watch?") !== false)
 	{
-		$proxurl = "https://test.sneakysneaky.tk/mini/index.php?" . $url;
+		$proxurl = "https://yt.sneakysneaky.tk/index.php?" . $url;
 		header("Location: $proxurl");
 	}
 	else if (strpos ($url, '.') !== false){
