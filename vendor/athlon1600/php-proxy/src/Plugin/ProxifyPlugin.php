@@ -36,6 +36,14 @@ class ProxifyPlugin extends AbstractPlugin {
 		if(starts_with($url, $schemes)){
 			return $matches[0];
 		}
+		elseif(starts_with($url, '/watch?')) {
+			$yturl = 'https://yt.sneakysneaky.tk/index.php?https://youtube.com' . $url;
+			return str_replace($url, $yturl, $matches[0]);
+		}
+		elseif(starts_with($url, 'https://youtube.com/watch?')) {
+			$yturl = 'https://yt.sneakysneaky.tk/index.php?' . $url;
+			return str_replace($url, $yturl, $matches[0]);
+		}
 		
 		return str_replace($url, proxify_url($url, $this->base_url), $matches[0]);
 	}
