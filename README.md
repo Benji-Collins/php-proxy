@@ -8,7 +8,9 @@ SneakySneaky is a simple web proxy that allows you to bypass blocked sites. It i
 
 ## Changes
 Here's a list of what's currently different from the main php-proxy-app:
+
 v1.1
+
     * Switched to [miniProxy](https://github.com/joshdick/miniProxy) for YouTube videos
         * Enables changing video quality (all resolutions are available now)
         * Uses new YouTube controls
@@ -19,11 +21,16 @@ v1.1
     * Fixed Reddit
         * Reddit.com redirects to old.reddit.com now
     * General cleanup
+    
 v1.0.2
+
     * Fixed Google search issue
 v1.0.1
+
     * Fixed some UI bugs
+    
 v1.0 (Initial fork)
+
     * More clean/modern look
     * Background by [Trianglify](https://github.com/qrohlf/trianglify)
     * Google search in URL bar
