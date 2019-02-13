@@ -42,7 +42,30 @@ session_write_close();
 if(isset($_POST['url'])){
 	
 	$url = $_POST['url'];
-	if (strpos ($url, '.') !== false){
+	if(strpos($url, "youtube.com/watch?") !== false) {
+		$proxurl = "https://yt.sneakysneaky.tk/index.php?" . $url;
+		header("HTTP/1.1 302 Found");
+		header("Location: $proxurl");
+		exit;
+	}
+	else if (strpos($url, "reddit.com") !== false) {
+		$cleanurl = preg_replace('#^https?://#', '', $url);
+		
+		if (strpos($cleanurl, "old.reddit.com") === 0) {
+			$url = add_http($url);
+			header("HTTP/1.1 302 Found");
+			header('Location: '.proxify_url($url));
+			exit;
+		}
+		else {
+			$proxurl = "https://old." . $cleanurl;
+			$proxurl = add_http($proxurl);
+			header("HTTP/1.1 302 Found");
+			header('Location: '.proxify_url($proxurl));
+			exit;
+		}
+	}
+	else if (strpos ($url, '.') !== false) {
 		$url = add_http($url);
 		header("HTTP/1.1 302 Found");
 		header('Location: '.proxify_url($url));

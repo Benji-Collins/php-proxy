@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sneaky Sneaky</title>
+
+<style type="text/css">
+* {
+	box-sizing: border-box;
+}
+.title {
+    text-align: center;
+    cursor: default;
+}
+body {
+	padding-top: 8em;
+	color: #FFFFFF;
+	font-family: Arial,Helvetica,sans-serif;
+}
+a {
+	color: #93A1A1;
+}
+.container {
+	padding: 1em;
+	margin: 1em auto;
+	width: 50em;
+	background-color: #073642;
+	background: #00000040;
+	z-index: 2;
+}
+.container:after {
+	display: table;
+	content: '';
+	clear: both;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+	left: 0;
+}
+/* Links */
+a {
+    color: #FFFFFF;
+    cursor: pointer;
+	text-decoration: underline;
+}
+a:link {
+    color: #FFFFFF; 
+    background-color: transparent; 
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #FFFFFF;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFFFFF;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #FFFFFF;
+    background-color: transparent;
+    text-decoration: underline;
+}
+/* For transparency */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bfbfbf;
+    opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #bfbfbf;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #bfbfbf;
+}
+#invisible {
+	color: #ffffff00;
+}
+/* For info */
+#backbox {
+	width: 150px;
+	height: 50px;
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+#backlink {
+	text-align: center;
+}
+#text {
+	width: 100%;
+	word-wrap: break-word;
+    font-size: 16px;
+}
+b {
+	font-size: 20px;
+}
+#end {
+	text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+	<div class="title">
+		<h1>SneakySneaky</h1>
+	</div>
+	<p id="text">
+	SneakySneaky is a simple web proxy that allows you to bypass blocked sites. It is based off of <a href="https://github.com/Athlon1600/php-proxy-app">PHP-Proxy</a> with some slight changes and improvements. It's not perfect but hey, it works.<br/><br/>
+
+	<b>Changes:</b><br/>
+    <i>v1.1</i><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Switched to <a href="https://github.com/joshdick/miniProxy">miniProxy</a> for YouTube videos<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Enables changing video quality (all resolutions are available now)<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Uses new YouTube controls<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Videos start quicker<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Videos buffer more (use 480p if you don't want to wait)<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• YouTube links go to yt.sneakysneaky.tk now<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Added info page<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Fixed Reddit<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Reddit.com redirects to old.reddit.com now<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• General cleanup<br/>
+	<i>v1.0.2</i><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Fixed Google search issue<br/>
+	<i>v1.0.1</i><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Fixed some UI bugs<br/>
+	<i>v1.0</i><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• More clean/modern look<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Background by <a href="https://github.com/qrohlf/trianglify">Trianglify</a><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Google search in URL bar<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Auto-hide URL bar on scroll<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Semi-transparent URL bar<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Added <a href="https://github.com/Athlon1600/php-proxy-plugin-bundle/pull/2">SecurityPlugin</a> (fixes a few major security flaws in main version)<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• 🌽<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Enable HD YouTube videos<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Made YouTube a bit cleaner<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;• Enlarged the YouTube player (better for 1080p screens)<br/><br/>
+	<div id="end">Source code & more information can be found <a href="https://github.com/Benji-Collins/php-proxy">here</a>.</div>
+	</p>
+</div>
+
+<div id="backbox">
+		<div id="backlink">
+			<a href="/">Back</a>
+		</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.1.0/trianglify.min.js"></script>
+<script>
+    var colours = ["YlGn", "YlGnBu", "GnBu", "BuGn", "PuBuGn", "PuBu", "BuPu", "RdPu", "Purples", "Blues", "Greens", "RdYlBu", "Spectral", "RdYlGn"];
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        cell_size: 60 + Math.random() * 100,
+        x_colors: colours[Math.floor(Math.random()*colours.length)],
+        y_colors: 'match_x',
+        stroke_width: 2
+    });
+    document.body.appendChild(pattern.canvas())
+</script>
+</body>
+</html>

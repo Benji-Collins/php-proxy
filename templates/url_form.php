@@ -83,7 +83,6 @@ function smart_select(ele){
 <div id="php-proxy-bar">
 	<form id="php-proxy-form" method="post" action="index.php" target="_top">
 		<input id="php-proxy-url" type="text" name="url" value="<?php echo $url; ?>" autocomplete="off">
-		
 		<input type="hidden" name="form" value="1">
 		<input id="php-proxy-go" type="submit" value="Go" />
 	</form>
