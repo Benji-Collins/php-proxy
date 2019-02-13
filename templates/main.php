@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 
 <title>Sneaky Sneaky</title>
 
+<meta charset="UTF-8">
 <meta name="generator" content="php-proxy.com">
 <meta name="version" content="<?=$version;?>">
 
