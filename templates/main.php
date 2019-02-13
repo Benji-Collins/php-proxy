@@ -127,6 +127,17 @@ a:active {
 #invisible {
 	color: #ffffff00;
 }
+/* For info */
+#infobox {
+	width: 150px;
+	height: 50px;
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+#infolink {
+	text-align: center;
+}
 </style>
 
 </head>
@@ -174,6 +185,11 @@ a:active {
 	<?php } ?>
 </div>
 
+<div id="infobox">
+		<div id="infolink">
+			<a href="/info">Info</a>
+		</div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.1.0/trianglify.min.js"></script>
 <script>
     var colours = ["YlGn", "YlGnBu", "GnBu", "BuGn", "PuBuGn", "PuBu", "BuPu", "RdPu", "Purples", "Blues", "Greens", "RdYlBu", "Spectral", "RdYlGn"];
