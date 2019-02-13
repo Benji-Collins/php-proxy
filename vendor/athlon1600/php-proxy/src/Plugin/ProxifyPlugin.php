@@ -36,13 +36,22 @@ class ProxifyPlugin extends AbstractPlugin {
 		if(starts_with($url, $schemes)){
 			return $matches[0];
 		}
-		elseif(starts_with($url, '/watch?')) {
+		
+		// For YouTube links
+		if (starts_with($url, '/watch?')) {
 			$yturl = 'https://yt.sneakysneaky.tk/index.php?https://youtube.com' . $url;
 			return str_replace($url, $yturl, $matches[0]);
 		}
 		elseif(starts_with($url, 'https://youtube.com/watch?')) {
 			$yturl = 'https://yt.sneakysneaky.tk/index.php?' . $url;
 			return str_replace($url, $yturl, $matches[0]);
+		}
+
+		// For Reddit links
+		$cleanurl = preg_replace('#^https?://#', '', $url);
+		if (starts_with($cleanurl, 'reddit.com') || starts_with($cleanurl, 'www.reddit.com')) {
+			$proxurl = 'https://old.' . $cleanurl;
+			return str_replace($url, proxify_url($proxurl, $this->base_url), $matches[0]); // Unlike the YT links, we still want to stay in the proxy
 		}
 		
 		return str_replace($url, proxify_url($url, $this->base_url), $matches[0]);
