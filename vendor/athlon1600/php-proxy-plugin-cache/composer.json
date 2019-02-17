@@ -1,0 +1,15 @@
+{
+	"name": "athlon1600/php-proxy-plugin-cache",
+	"description": "Cache Plugin for PHP-Proxy",
+	"homepage": "https://www.php-proxy.com/",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Proxy\\Plugin\\": ""
+		}
+	},
+	"require": {
+		"predis/predis": "~1.0"
+	}
+}
