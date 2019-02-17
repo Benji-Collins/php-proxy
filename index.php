@@ -10,7 +10,6 @@ use Proxy\Plugin\AbstractPlugin;
 use Proxy\Event\FilterEvent;
 use Proxy\Config;
 use Proxy\Proxy;
-use Proxy\plugin\YoutubePlugin;
 // start the session
 session_start();
 
